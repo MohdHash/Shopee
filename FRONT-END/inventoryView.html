@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory View</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="STYLES/amazon-header.css">
+    <link rel="stylesheet" href="STYLES/InventoryView.css">
+
+</head>
+<body>
+
+    <div class="amazon-header">
+        <div class="amazon-header-left-section">
+          <a href="amazon.html" class="header-link">
+            <img class="amazon-logo"
+              src="images/amazon-logo-white.png">
+            <img class="amazon-mobile-logo"
+              src="images/amazon-mobile-logo-white.png">
+          </a>
+        </div>
+  
+        <div class="amazon-header-middle-section">
+          <input class="search-bar" type="text" placeholder="Search">
+  
+          <button class="search-button">
+            <img class="search-icon" src="images/icons/search-icon.png">
+          </button>
+        </div>
+  
+        <div class="amazon-header-right-section">
+          <a class="orders-link header-link" href="orders.html">
+            <span class="returns-text">Returns</span>
+            <span class="orders-text">& Orders</span>
+          </a>
+  
+          <a class="cart-link header-link" href="checkout.html">
+            <img class="cart-icon" src="images/icons/cart-icon.png">
+            <div class="cart-quantity js-cart-quantity">0</div>
+            <div class="cart-text">Cart</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="main-body">
+           <!-- Dropdown to select categories -->
+            <select id="categoryDropdown">
+                <option value="all">All Categories</option>
+                <!-- Categories will be populated dynamically -->
+            </select>
+
+            <!-- Input for searching products -->
+            <input type="text" id="searchInput" placeholder="Search products..." />
+
+            <!-- Table to display products -->
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Image</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Products will be dynamically populated here -->
+                </tbody>
+            </table>
+
+            <div id="paginationControls">
+                <button id="firstPageBtn">First</button>
+                <button id="prevPageBtn">Previous</button>
+                <span id="pageInfo"></span>
+                <button id="nextPageBtn">Next</button>
+                <button id="lastPageBtn">Last</button>
+            </div>
+      </div>
+     
+
+      <script src="SCRIPTS/inventoryView.js" type="module"></script>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+
+    
+</body>
+</html>

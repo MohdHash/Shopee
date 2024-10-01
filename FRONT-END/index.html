@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./STYLES/amazon-header.css">
+    <link rel="stylesheet" href="./STYLES/general.css">    
+    <link rel="stylesheet" href="./STYLES/login-page.css">
+
+</head>
+<body>
+    <div class="amazon-header">
+        <div class="amazon-header-left-section">
+          <a href="amazon.html" class="header-link">
+            <img class="amazon-logo"
+              src="images/amazon-logo-white.png">
+            <img class="amazon-mobile-logo"
+              src="images/amazon-mobile-logo-white.png">
+          </a>
+        </div>
+  
+        <div class="amazon-header-middle-section">
+          <input class="search-bar" type="text" placeholder="Search">
+  
+          <button class="search-button">
+            <img class="search-icon" src="images/icons/search-icon.png">
+          </button>
+        </div>
+  
+        <div class="amazon-header-right-section">
+          <a class="orders-link header-link" href="orders.html">
+            <span class="returns-text">Returns</span>
+            <span class="orders-text">& Orders</span>
+          </a>
+  
+          <a class="cart-link header-link" href="checkout.html">
+            <img class="cart-icon" src="images/icons/cart-icon.png">
+            <div class="cart-quantity js-cart-quantity">0</div>
+            <div class="cart-text">Cart</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="login-page-container">
+        <div class="login-left-half">
+            <div class="login-text">
+                <h2 id="login-text">Login</h2>
+                <p>Enter the Shopping World</p>
+            </div>
+        </div>
+        <div class="login-right-half">
+            <form class="login-form" id="login-form">
+                <input id="email" type="text" placeholder="Email or Phone Number" required>
+                <input id="pass" type="password" placeholder="Password" required>
+                <div class="remember-me-container">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+                <button id="btn" type="submit">Sign In</button>
+                <div id='forgot-password-container'class="forgot-password-container">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div>
+                    <p id="isRegistered">Not registered?</p>
+                    <span><a id="signTag" href="#">Sign up</a> 💫</span>
+                    
+                </div>
+            </form>
+            
+        </div>
+      </div>
+<!-- 
+      <script type="module" src="./SCRIPTS/sub-login.js"></script> -->
+      <script type="module" src="./SCRIPTS/login.js"></script>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>

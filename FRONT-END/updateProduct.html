@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="STYLES/amazon-header.css">
+
+</head>
+<body>
+    <h1>Manage Products</h1>
+
+    <!-- Step 1: Select Category -->
+    <label for="categorySelect">Select Category:</label>
+    <select id="categorySelect" name="categorySelect" required></select>
+    <br><br>
+
+    <!-- Step 2: List Products -->
+    <div id="productList"></div>
+
+    <!-- Step 3: Edit Product Form (hidden initially) -->
+    <div id="editProductForm" style="display:none;">
+        <h3>Edit Product</h3>
+        <form id="updateProductForm">
+            <input type="hidden" id="productID" name="productID">
+            <label for="title">Product Title:</label>
+            <input type="text" id="editTitle" name="title"><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="editDescription" name="description"></textarea><br><br>
+
+            <label for="stock">Stock Quantity:</label>
+            <input type="number" id="editStock" name="stock"><br><br>
+
+            <label for="price">Price:</label>
+            <input type="number" id="editPrice" name="price"><br><br>
+
+            <button type="submit">Update Product</button>
+        </form>
+    </div>
+
+
+    <script src="./SCRIPTS/updateProduct.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>

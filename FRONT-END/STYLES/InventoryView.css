@@ -1,0 +1,122 @@
+body{
+    box-sizing: border-box;
+    font-family:  Roboto, Arial;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+.main-body{
+    position: absolute;
+    top:70px;
+    width: 95%;
+    padding:5px 10px;
+}
+/* Styling the dropdown */
+#categoryDropdown {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+/* Styling the search input */
+#searchInput {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #cbcace;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Styling the inventory table */
+#inventoryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+#inventoryTable thead tr {
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+#inventoryTable thead th {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Table body styling */
+#inventoryTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#inventoryTable tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+#inventoryTable tbody td {
+    padding: 15px;
+    font-size: 14px;
+    color: #555;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#inventoryTable td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+/* Hover effect for table rows */
+#inventoryTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#paginationControls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#paginationControls button {
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#paginationControls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    #categoryDropdown, #searchInput {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #inventoryTable {
+        font-size: 12px;
+    }
+
+    #inventoryTable thead th, #inventoryTable tbody td {
+        padding: 10px;
+    }
+}
+

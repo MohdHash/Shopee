@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Category</title>
+
+     <!-- Load a font called Roboto from Google Fonts. -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="STYLES/amazon-header.css">
+</head>
+<body>
+    <h1>Add New Category</h1>
+    <form id="categoryForm">
+        <label for="categoryName">Category Name:</label>
+        <input type="text" id="categoryName" name="categoryName" required><br><br>
+        <button type="submit">Add Category</button>
+    </form>
+    <p id="response"></p>
+
+    <script src="./SCRIPTS/addCategory.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</body>
+</html>
