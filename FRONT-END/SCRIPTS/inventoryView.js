@@ -1,16 +1,13 @@
 
 import { FIRESTORE_BASE_URL } from "../CONSTANTS/constants.js";
-    // let currentPage = 1;
-    // const productPerPage = 8;
-    // let totalpages = 1;
-
-$(document).ready(function(){
-
     let products=[];
     const categoryCache = {};
     let currentPage = 1;
     const productPerPage = 8;
     let totalpages = 1;
+$(document).ready(function(){
+
+    
 
     //fetch products and categories.
 
@@ -89,29 +86,64 @@ $(document).ready(function(){
     });
 
 
-    $('#categoryDropdown').on('change', function () {
-        const selectedCategory = $(this).val();
-        console.log(selectedCategory);
+    // $('#categoryDropdown').on('change', function () {
+    //     const selectedCategory = $(this).val();
+    //     console.log(selectedCategory);
 
-        let filterdProducts = products;
+    //     let filterdProducts = products;
+
+    //     if(selectedCategory !== 'all'){
+    //         filterdProducts = products.filter( p => {
+    //             const categoryRef = p.fields.categoryID.referenceValue;
+    //             const categoryID = categoryRef.split('/').pop();
+
+    //             return categoryID === selectedCategory;
+    //         })
+    //     }
+    //     // let filteredProducts = products;
+
+    //     // if (selectedCategory !== 'all') {
+    //     //     filteredProducts = products.filter(p => p.fields.category.stringValue === selectedCategory);
+    //     // }
+
+    //     displayProductsPaginated(filterdProducts);
+    // });
+
+    //searching the product
+    // $('#searchInput').on('input', function () {
+    //     const searchText = $(this).val().toLowerCase(); // get lowercase search text
+    //     const filteredProducts = products.filter(p => 
+    //         p.fields.title.stringValue.toLowerCase().includes(searchText)
+    //     );
+    //     displayProductsPaginated(filteredProducts);
+    // });
+
+    function filterProducts(){
+        let filteredProducts = products;
+
+        const searchText = $('#searchInput').val().toLowerCase(); // get lowercase search text
+        const selectedCategory = $('#categoryDropdown').val();
 
         if(selectedCategory !== 'all'){
-            filterdProducts = products.filter( p => {
+            filteredProducts = filteredProducts.filter( p => {
                 const categoryRef = p.fields.categoryID.referenceValue;
                 const categoryID = categoryRef.split('/').pop();
 
                 return categoryID === selectedCategory;
+            });
+        }
+
+        if(searchText){
+            filteredProducts = filteredProducts.filter( p => {
+                return p.fields.title.stringValue.toLowerCase().includes(searchText);
             })
         }
-        // let filteredProducts = products;
+        
+        displayProductsPaginated(filteredProducts);
+    }
 
-        // if (selectedCategory !== 'all') {
-        //     filteredProducts = products.filter(p => p.fields.category.stringValue === selectedCategory);
-        // }
-
-        displayProductsPaginated(filterdProducts);
-    });
-
+    $('#searchInput').on('input', filterProducts);
+    $('#categoryDropdown').on('change',filterProducts);
 
     //display all the products
     function displayProducts(products){
@@ -192,3 +224,4 @@ $(document).ready(function(){
     fetchProductsAndCategories();
 
 });
+
