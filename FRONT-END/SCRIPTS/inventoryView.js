@@ -1,13 +1,17 @@
 
 import { FIRESTORE_BASE_URL } from "../CONSTANTS/constants.js";
+import { handleLogout } from "./logoutHeader.js";
+$(document).ready(function(){
+    console.log(localStorage.getItem('userID'));
     let products=[];
     const categoryCache = {};
     let currentPage = 1;
     const productPerPage = 8;
     let totalpages = 1;
-$(document).ready(function(){
 
-    
+    $('#logoutButton').on('click', function(){
+        handleLogout();
+    })
 
     //fetch products and categories.
 
@@ -138,7 +142,7 @@ $(document).ready(function(){
                 return p.fields.title.stringValue.toLowerCase().includes(searchText);
             })
         }
-        
+
         displayProductsPaginated(filteredProducts);
     }
 
@@ -194,28 +198,46 @@ $(document).ready(function(){
         });
     }
 
-    function populateCategoryDropdown(){
+    function populateCategoryDropdown() {
         const categoryDropdown = $('#categoryDropdown');
-        categoryDropdown.empty();
-        
-        const categoryRefs = [...new Set(products.map( product => product.fields.categoryID.referenceValue))];
-
-        categoryRefs.forEach(categoryRef =>  {
-            const categoryID = categoryRef.split('/').pop();
-
-            if(categoryCache[categoryID]){
-                categoryDropdown.append(new Option(categoryCache[categoryID] , categoryID));
-            }else{
-
-                //otherwise fetch the cateory
+        categoryDropdown.empty();  // Clear the dropdown before repopulating
+    
+        // Add the "All Categories" option
+        categoryDropdown.append(new Option("All Categories", "all"));
+    
+        // Get unique category references from products
+        const categoryRefs = [...new Set(products.map(product => product.fields.categoryID.referenceValue))];
+    
+        // Track categories that have been added to the dropdown
+        const addedCategories = new Set();
+    
+        categoryRefs.forEach(categoryRef => {
+            const categoryID = categoryRef.split('/').pop();  // Extract the category ID
+    
+            // Check if this category has already been added to the dropdown
+            if (addedCategories.has(categoryID)) {
+                return;  // Skip if already added
+            }
+    
+            // If the category is cached, append it immediately
+            if (categoryCache[categoryID]) {
+                categoryDropdown.append(new Option(categoryCache[categoryID], categoryID));
+                addedCategories.add(categoryID);  // Mark the category as added
+            } else {
+                // Otherwise, fetch the category name
                 fetchCategoryName(categoryID)
                     .then(categoryName => {
-                        console.log(categoryName);
+                        // Store the category name in the cache
                         categoryCache[categoryID] = categoryName;
-                        categoryDropdown.append(new Option(categoryName , categoryID));
+    
+                        // Append to the dropdown only if not already added (in case async calls overlap)
+                        if (!addedCategories.has(categoryID)) {
+                            categoryDropdown.append(new Option(categoryName, categoryID));
+                            addedCategories.add(categoryID);  // Mark the category as added
+                        }
                     })
                     .catch(error => {
-                        console.log("Error fetching category", error);
+                        console.log("Error fetching category:", error);
                     });
             }
         });

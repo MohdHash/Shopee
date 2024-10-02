@@ -20,6 +20,9 @@ $(document).ready(function(){
 
         const email = $('#email').val();
         const password = $('#pass').val();
+        const name = $('#name').val();
+        const phoneNumber = $('#mobile').val();
+        const creditLimit = 0;
         console.log("password: " + password);
         const SignUpUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`;
         const SignInUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`;
@@ -46,7 +49,7 @@ $(document).ready(function(){
 
                localStorage.setItem('userId', userId);
 
-               createUserInFirestore(userId, emailID,false);
+               createUserInFirestore(userId, emailID,false,name,phoneNumber,creditLimit);
             //    getUserRole(userId,idToken);
 
             setTimeout(()=>{
@@ -77,7 +80,7 @@ $(document).ready(function(){
                 },
                 error : function(error){
                     console.error(error);
-                    alert('Error creating user!');
+                    alert('Error loggin in user!');
                 }
             })
         }

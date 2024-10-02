@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+
+    <link rel="stylesheet" href="STYLES/amazon-header.css">
+    <link rel="stylesheet" href="STYLES/amazon.css">
+    <link rel="stylesheet" href="STYLES/general.css">
+    <link rel="stylesheet" href="STYLES/checkout.css">
+
+    <style>
+        .no-stock {
+            color: red;
+        }
+
+        .hurry-up {
+            color: darkblue;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .cart-item img {
+            max-width: 100px;
+        }
+
+        .quantity-input {
+            width: 60px;
+        }
+
+        .subtotal {
+            font-weight: bold;
+        }
+
+        #totalPrice {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: right;
+        }
+    </style>
+
+</head>
+<body>
+    
+
+    <div class="amazon-header">
+        <div class="amazon-header-left-section">
+            <a href="customerHome.html" class="header-link">
+                <img class="amazon-logo" src="images/amazon-logo-white.png">
+                <img class="amazon-mobile-logo" src="images/amazon-mobile-logo-white.png">
+            </a>
+        </div>
+
+        <div class="amazon-header-middle-section">
+            <input class="search-bar" type="text" placeholder="Search">
+            <button class="search-button">
+                <img class="search-icon" src="images/icons/search-icon.png">
+            </button>
+        </div>
+
+        <div class="amazon-header-right-section">
+            <a class="orders-link header-link" href="orders.html">
+                <span class="returns-text">Returns</span>
+                <span class="orders-text">& Orders</span>
+            </a>
+            <a class="cart-link header-link" href="cartPage.html">
+                <img class="cart-icon" src="images/icons/cart-icon.png">
+                <div class="cart-quantity js-cart-quantity">0</div>
+                <div class="cart-text">Cart</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="cart-items" id="cartItems"></div>
+        <div id="totalPrice">Total: $0</div>
+
+        <div id="checkoutContainer">
+            <button id="checkoutButton">Proceed to Checkout</button>
+        </div>
+    
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Select Payment Method</h2>
+                <button class="payment-option" id="cashOption">Cash</button>
+                <button class="payment-option" id="creditOption">Credit</button>
+                <button class="payment-option" id="gpayOption">GPay</button>
+            </div>
+        </div>
+    
+        <div id="loadingIndicator" class="loading" style="display: none;">
+            <p>Processing your order...</p>
+        </div>
+    </div>
+
+
+
+
+      <script src="SCRIPTS/cartPage.js" type="module"></script>
+      <script src="SCRIPTS/scripts.js"  type="module"></script>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

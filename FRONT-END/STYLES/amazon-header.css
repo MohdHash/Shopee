@@ -17,7 +17,7 @@
   }
   
   .amazon-header-left-section {
-    width: 180px;
+    width: 130px;
   }
   
   @media (max-width: 800px) {
@@ -62,7 +62,7 @@
   
   .amazon-header-middle-section {
     flex: 1;
-    max-width: 850px;
+    max-width: 600px;
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
@@ -70,7 +70,7 @@
   
   .search-bar {
     flex: 1;
-    width: 0;
+    width: 80%;
     font-size: 16px;
     height: 38px;
     padding-left: 15px;
@@ -148,3 +148,19 @@
     width: 26px;
     text-align: center;
   }
+
+  .logout-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 6px;
+  }
+  
+  .logout-button:hover {
+    border: 1px solid white;
+    border-radius: 2px;
+  }
+  
