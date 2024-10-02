@@ -20,12 +20,25 @@ $('#categoryForm').on('submit', function (e) {
             }
         }),
         success: function (response) {
-            $('#response').text('Category added Succssfully');
-            // $('#categoryName').text('');
-            // $('#response').text('');
+            showSuccessModal('Category added successfully!');
         },
         error: function(error){
-            $('#response').text('Error adding category: ' + error.responseText);
+            $('#response').addClass('error').text('Error adding category: ' + error.responseText).fadeIn();
         }
     });
 });
+
+function showSuccessModal(message) {
+    const successModal = $('<div class="success-modal"></div>').text(message);
+    $('body').append(successModal);
+    successModal.addClass('show');
+    
+    setTimeout(function() {
+        successModal.addClass('fade-out');
+    }, 2000);  // Keep the modal visible for 2 seconds
+
+    // Remove the modal after animation completes
+    setTimeout(function() {
+        successModal.remove();
+    }, 2500);
+}

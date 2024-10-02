@@ -35,7 +35,7 @@ $(document).ready(function () {
             
             const productName = $(this).find('div').first().text();  // Select the first <div> inside cart-item
 
-    console.log('Product Name:', productName);  // Debugging // Debugging
+        console.log('Product Name:', productName);  // Debugging // Debugging
 
             orderItems.push({
                 mapValue: {

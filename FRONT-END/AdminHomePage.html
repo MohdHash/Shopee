@@ -17,11 +17,11 @@
 
     <div class="amazon-header">
         <div class="amazon-header-left-section">
-          <a href="amazon.html" class="header-link">
+          <a href="AdminHomePage.html" class="header-link">
             <img class="amazon-logo"
-              src="images/amazon-logo-white.png">
+              src="../IMAGES/amazon-logo-white.png">
             <img class="amazon-mobile-logo"
-              src="images/amazon-mobile-logo-white.png">
+              src="../IMAGES/amazon-mobile-logo-white.png">
           </a>
         </div>
   
@@ -29,7 +29,7 @@
           <input class="search-bar" type="text" placeholder="Search">
   
           <button class="search-button">
-            <img class="search-icon" src="images/icons/search-icon.png">
+            <img class="search-icon" src="../IMAGES/search-icon.png">
           </button>
         </div>
   
@@ -40,10 +40,12 @@
           </a>
   
           <a class="cart-link header-link" href="checkout.html">
-            <img class="cart-icon" src="images/icons/cart-icon.png">
+            <img class="cart-icon" src="../IMAGES/cart-icon.png">
             <div class="cart-quantity js-cart-quantity">0</div>
             <div class="cart-text">Cart</div>
           </a>
+
+          <button class="logout-button header-link" id="logoutButton" onclick="{window.location.href = 'index.html'}">Logout</button>
         </div>
       </div>
 
@@ -53,8 +55,8 @@
             <button onclick="window.location.href='addCategory.html'">Add New Category</button><br><br>
             <button onclick="window.location.href='addProduct.html'">Add New Product</button><br><br>
             <button onclick="window.location.href='updateProduct.html'">Update Product</button><br><br>
-            <button onclick="window.location.href='manageProducts.html'">Activate/Deactivate Products</button><br><br>
-            <button onclick="window.location.href='deleteProduct.html'">Soft Delete Product</button><br><br>
+            <button onclick="window.location.href='Reports.html'">Generate Reports</button><br><br>
+            <button onclick="window.location.href='CreditManagement.html'">Credit Management</button><br><br>
             <button onclick="window.location.href='inventoryView.html'">View the inventory</button><br><br>
         </div>
         

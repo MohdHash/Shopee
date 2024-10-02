@@ -1,0 +1,130 @@
+/* amazon-header.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../IMAGES/addProductbackground.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f0c14b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: scaleUp 0.5s ease-out;
+    width: 100%;
+    max-width: 600px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"], 
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    transition: border 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+input:focus, 
+textarea:focus, 
+select:focus {
+    border: 1px solid #f0c14b;
+    outline: none;
+    box-shadow: 0 0 10px rgba(240, 193, 75, 0.5);
+}
+
+button {
+    background-color: #f0c14b;
+    color: #111;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e7b933;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#response {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 15px;
+    color: #f0c14b;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Input File Upload Styling */
+#imageUpload {
+    padding: 10px;
+    background-color: #f0c14b;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #111;
+    transition: background-color 0.3s ease;
+}
+
+#imageUpload:hover {
+    background-color: #e7b933;
+}

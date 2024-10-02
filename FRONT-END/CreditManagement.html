@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Customer Management</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="STYLES/CreditManagement.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Customer Management</h2>
+        <table id="customerTable">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Phone Number</th>
+                    <th>Credit Value</th>
+                    <th>Update Credit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Customer rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="notification" class="notification">Credit updated successfully!</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="SCRIPTS/CreditManagement.js"  type="module"></script>
+</html>
