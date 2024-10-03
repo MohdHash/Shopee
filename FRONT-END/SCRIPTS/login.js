@@ -47,7 +47,7 @@ $(document).ready(function(){
                const emailID = response.email;
                const idToken = response.idToken;
 
-               localStorage.setItem('userId', userId);
+               localStorage.setItem('userID', userId);
 
                createUserInFirestore(userId, emailID,false,name,phoneNumber,creditLimit);
             //    getUserRole(userId,idToken);

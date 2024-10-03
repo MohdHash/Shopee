@@ -128,7 +128,7 @@ $(document).ready(function () {
                     // Step 3: Create new order history document
                     $.ajax({
                         url: `${FIRESTORE_BASE_URL}/orderHistory/${userID}`,
-                        method: 'PUT',  // Use PUT to create a new document
+                        method: 'PATCH',  // Use PUT to create a new document
                         contentType: 'application/json',
                         data: JSON.stringify(initialData),
                         success: function () {

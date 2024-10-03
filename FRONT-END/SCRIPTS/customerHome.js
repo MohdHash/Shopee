@@ -128,7 +128,7 @@ $(document).ready(function(){
                     // Create a new document with the cartItem
                     $.ajax({
                         url: `${FIRESTORE_BASE_URL}/cart/${userID}`,
-                        method: 'POST',
+                        method: 'PATCH',
                         contentType: 'application/json',
                         data: JSON.stringify({
                             fields: {
