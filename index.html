@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./STYLES/amazon-header.css">
-    <link rel="stylesheet" href="./STYLES/general.css">    
-    <link rel="stylesheet" href="./STYLES/login-page.css">
+    <link rel="stylesheet" href="./FRONT-END/STYLES/amazon-header.css">
+    <link rel="stylesheet" href="./FRONT-END/STYLES/general.css">    
+    <link rel="stylesheet" href="./FRONT-END/STYLES/login-page.css">
 
     <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
@@ -42,9 +42,9 @@
         <div class="amazon-header-left-section">
           <a href="index.html" class="header-link">
             <img style="width: 45px; height: 45px;" class="amazon-logo"
-              src="../IMAGES/shipping-cart -logo-1.png">
+              src="./IMAGES/shipping-cart -logo-1.png">
             <img class="amazon-mobile-logo"
-              src="../IMAGES/amazon-mobile-logo-white.png">
+              src="./IMAGES/amazon-mobile-logo-white.png">
           </a>
         </div>
   
@@ -52,7 +52,7 @@
           <input class="search-bar" type="text" placeholder="Search">
   
           <button class="search-button">
-            <img class="search-icon" src="../IMAGES/search-icon.png">
+            <img class="search-icon" src="./IMAGES/search-icon.png">
           </button>
         </div>
   
@@ -62,9 +62,9 @@
             <span class="orders-text">& Orders</span>
           </a>
   
-          <a class="cart-link header-link" href="checkout.html">
-            <img class="cart-icon" src="../IMAGES/cart-icon.png">
-            <div class="cart-quantity js-cart-quantity">0</div>
+          <a class="cart-link header-link" href="index.html">
+            <img class="cart-icon" src="./IMAGES/cart-icon.png">
+            <div class="cart-quantity js-cart-quantity"></div>
             <div class="cart-text">Cart</div>
           </a>
 
@@ -102,7 +102,7 @@
             </form>
 
             <button style="margin-top: 15px;" id="googleSignInButton" type="button">
-              <img style="width: 30px; height: 30px;" src="../IMAGES/google-icon.png" alt="Google Sign-In">
+              <img style="width: 30px; height: 30px;" src="./IMAGES/google-icon.png" alt="Google Sign-In">
               Sign In with Google
           </button>
             
@@ -110,8 +110,8 @@
       </div>
 <!-- 
       <script type="module" src="./SCRIPTS/sub-login.js"></script> -->
-      <script type="module" src="./SCRIPTS/login.js"></script>
-      <script type="module" src="./SCRIPTS/google-auth.js"></script>
+      <script type="module" src="./FRONT-END/SCRIPTS/login.js"></script>
+      <script type="module" src="./FRONT-END/SCRIPTS/google-auth.js"></script>
       <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
