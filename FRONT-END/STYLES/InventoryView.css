@@ -1,122 +1,210 @@
-body{
-    box-sizing: border-box;
-    font-family:  Roboto, Arial;
-    background-color: #f4f4f4;
+/* Background styling with image and gradient overlay */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 20px;
-}
-.main-body{
-    position: absolute;
-    top:70px;
-    width: 95%;
-    padding:5px 10px;
-}
-/* Styling the dropdown */
-#categoryDropdown {
-    width: 200px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 20px;
-    background-color: #fff;
-    font-size: 16px;
-}
-
-/* Styling the search input */
-#searchInput {
-    padding: 10px;
-    width: 300px;
-    font-size: 16px;
-    border: 1px solid #cbcace;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    color: black;
-}
-
-/* Styling the inventory table */
-#inventoryTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Table header styling */
-#inventoryTable thead tr {
-    background-color: #f8f8f8;
-    border-bottom: 2px solid #e6e6e6;
-}
-
-#inventoryTable thead th {
-    padding: 15px;
-    text-align: left;
-    font-size: 16px;
-    color: #333;
-    border-bottom: 1px solid #ccc;
-}
-
-/* Table body styling */
-#inventoryTable tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#inventoryTable tbody tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-#inventoryTable tbody td {
-    padding: 15px;
-    font-size: 14px;
-    color: #555;
-    border-bottom: 1px solid #e6e6e6;
-}
-
-#inventoryTable td img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-
-/* Hover effect for table rows */
-#inventoryTable tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-#paginationControls {
-    margin-top: 20px;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), 
+                url('../../IMAGES/inventoryView.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+/* Glassmorphism for main content */
+.main-body {
+    width: 80%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideIn 1s ease-out;
+    margin-top: 40px;
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Category dropdown and search styling */
+#categoryDropdown, #searchInput {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    margin-right: 20px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+#categoryDropdown:hover, #searchInput:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#categoryDropdown:focus, #searchInput:focus {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    color: #fff;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(3px);
+}
+
+td img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+td img:hover {
+    transform: scale(1.1);
+}
+
+/* Pagination controls */
+#paginationControls {
+    margin-top: 20px;
+    text-align: center;
 }
 
 #paginationControls button {
-    padding: 10px;
+    padding: 10px 20px;
     margin: 0 5px;
-    cursor: pointer;
+    border-radius: 25px;
+    background-color: #f90;
+    color: white;
+    border: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#paginationControls button:hover {
+    background-color: #ff9f1c;
+    transform: translateY(-2px);
 }
 
 #paginationControls button:disabled {
+    background-color: rgba(255, 255, 255, 0.3);
     cursor: not-allowed;
-    opacity: 0.5;
 }
 
+/* Header styling with animation */
+.amazon-header {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    animation: fadeIn 1.2s ease-out;
+}
 
-/* Responsive styling for smaller screens */
+.amazon-logo, .amazon-mobile-logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.amazon-header .header-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.amazon-header .header-link:hover {
+    color: #ff9f1c;
+}
+
+/* Logout button styling */
+.logout-button {
+    background-color: rgba(255, 69, 58, 0.8);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 69, 58, 1);
+    transform: scale(1.1);
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    #categoryDropdown, #searchInput {
-        width: 100%;
-        margin-bottom: 10px;
+    .main-body {
+        width: 95%;
+        padding: 15px;
     }
 
-    #inventoryTable {
+    table {
         font-size: 12px;
     }
 
-    #inventoryTable thead th, #inventoryTable tbody td {
-        padding: 10px;
+    td img {
+        width: 40px;
+        height: 40px;
     }
 }
-

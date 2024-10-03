@@ -157,7 +157,7 @@ $(document).ready(function(){
         products.forEach(product => {
             const productName = product.fields.title.stringValue;
             const productCategoryRef = product.fields.categoryID.referenceValue;
-            const productPrice = product.fields.price.doubleValue;
+            const productPrice = product.fields.price.doubleValue || product.fields.price.integerValue;
             const productQuantity = product.fields.quantity.integerValue;
             const productImageURL = product.fields.imageUrl.stringValue;
 

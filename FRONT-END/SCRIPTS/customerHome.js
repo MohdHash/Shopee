@@ -9,6 +9,11 @@ $(document).ready(function(){
         handleLogout();
     })
 
+    const userDATA = localStorage.getItem('userID'); // Assuming userID is stored on login
+    if (!userDATA) {
+        window.location.href = "index.html";  // Redirect to login if no user is found
+    }
+
     console.log(localStorage.getItem('userID'));
 
     $.ajax({
